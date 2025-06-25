@@ -345,31 +345,49 @@ if st.session_state.show_results and st.session_state.results:
             else: st.info("Consumptions for all vessel types are effectively zero.")
         else: st.info("No vessel consumption data to display.")
     
-    st.divider()
+   st.divider()
     st.markdown("**Total Demand by Base Fuel Type (Aggregated)**")
     base_fuel_demand_data = results.get("base_fuel_demand_gj", {})
+
+    # Filter out base fuels with negligible demand for plotting
     plot_base_fuel_demand = {
-        fuel: demand for fuel, demand in base_fuel_demand_data.items() if abs(demand) > 1e-9
+        fuel: demand for fuel, demand in base_fuel_demand_data.items() if abs(demand) > 1e-9  # Using a small epsilon
     }
+
     if plot_base_fuel_demand:
-        df_base_demand = pd.DataFrame(plot_base_fuel_demand.items(), columns=['Base Fuel Type', 'Total Demand (GJ/Year)'])
-        df_base_demand = df_base_demand.sort_values(by='Total Demand (GJ/Year)', ascending=False) 
-        
-        fig_base_demand = px.bar(
-            df_base_demand, x='Base Fuel Type', y='Total Demand (GJ/Year)',
-            color='Base Fuel Type', 
-            text_auto='.4s', 
-            labels={'Total Demand (GJ/Year)': 'Total Demand (GJ/Year)'}
+        df_base_demand = pd.DataFrame(plot_base_fuel_demand.items(),
+                                      columns=['Base Fuel Type', 'Total Demand (GJ/Year)'])
+        # Sorting by demand might still be useful for how Plotly orders segments if not specified otherwise,
+        # but for a pie chart, it's less critical for direct visual interpretation than for bars.
+        df_base_demand = df_base_demand.sort_values(by='Total Demand (GJ/Year)', ascending=False)
+
+        # --- MODIFICATION: Convert to Pie Chart ---
+        fig_base_demand_pie = px.pie(
+            df_base_demand,
+            names='Base Fuel Type',
+            values='Total Demand (GJ/Year)',
+            hole=0.3,  # Optional: for a donut chart effect
+            # title="Fuel Demand Distribution" # Title can be set here or via markdown
         )
-        fig_base_demand.update_layout(
-            xaxis_tickangle=-45, 
-            height=450, 
-            margin=dict(b=120), 
-            showlegend=False 
+
+        fig_base_demand_pie.update_traces(
+            textposition='inside',  # Options: 'inside', 'outside', 'auto', 'none'
+            textinfo='percent+label',  # Shows percentage and label on slices
+            # hoverinfo='label+percent+value' # Info on hover
+            pull=[0.05 if i == 0 else 0 for i in range(len(df_base_demand))]  # Explode the largest slice slightly
         )
-        fig_base_demand.update_traces(textposition='outside')
-        st.plotly_chart(fig_base_demand, use_container_width=True)
-    else: st.info("No significant base fuel demand to display.")
+
+        fig_base_demand_pie.update_layout(
+            # title_x=0.5, # Center title if you set it in px.pie
+            height=450,
+            margin=dict(t=30, b=30, l=30, r=30),  # Adjust margins
+            showlegend=True,  # Usually good to have legend for pie, or can be False if labels on slices are enough
+            legend_title_text='Fuel Types',
+            # legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1) # Example legend positioning
+        )
+        st.plotly_chart(fig_base_demand_pie, use_container_width=True)
+    else:
+        st.info("No significant base fuel demand to display.")
 
 else:
     if not st.session_state.show_results:
