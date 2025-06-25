@@ -345,7 +345,7 @@ if st.session_state.show_results and st.session_state.results:
             else: st.info("Consumptions for all vessel types are effectively zero.")
         else: st.info("No vessel consumption data to display.")
     
-st.divider()
+    st.divider()
     st.markdown("**Total Demand by Base Fuel Type (Aggregated)**")
     base_fuel_demand_data = results.get("base_fuel_demand_gj", {})
 
