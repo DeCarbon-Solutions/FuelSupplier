@@ -18,16 +18,16 @@ VESSEL_TYPES_OWNED = ["VLCC", "Suezmax", "Aframax", "Panamax", "MR Tanker"]
 MILLION = 1_000_000
 
 DEFAULT_OWNED_VESSEL_COUNTS = {
-    2030: {"vlcc": 18, "suezmax": 29, "aframax": 5, "panamax": 1, "mr_tanker": 4},
-    2040: {"vlcc": 18, "suezmax": 29, "aframax": 5, "panamax": 0, "mr_tanker": 0},
-    2050: {"vlcc": 18, "suezmax": 29, "aframax": 0, "panamax": 0, "mr_tanker": 0},
+    2030: {"vlcc": 21, "suezmax": 33, "aframax": 12, "panamax": 0, "mr_tanker": 12},
+    2040: {"vlcc": 23, "suezmax": 34, "aframax": 10, "panamax": 0, "mr_tanker": 12},
+    2050: {"vlcc": 25, "suezmax": 35, "aframax": 10, "panamax": 0, "mr_tanker": 5},
 }
 
 # NEW: Default Fleet GFI values for plotting
 DEFAULT_FLEET_GFI = {
-    2030: 85.8,
-    2040: 14.0,
-    2050: 16.8
+    2030: 86.2,
+    2040: 13.0,
+    2050: 15.2
 }
 
 FUEL_MIX_CATEGORIES = {
@@ -36,14 +36,14 @@ FUEL_MIX_CATEGORIES = {
     2050: {"diesel_prod": "Diesel (Produced)", "b100_prod": "B100 (Produced)", "b100_proc": "B100 (Procured)", "biomethanol_prod": "bioMethanol (Produced)", "biomethanol_proc": "bioMethanol (Procured)", "ammonia_prod": "Ammonia (Produced)", "ammonia_proc": "Ammonia (Procured)", "biolng_prod": "BioLNG (Produced)", "biolng_proc": "BioLNG (Procured)", "blueh2_prod": "BlueH2 (Produced)", "blueh2_proc": "BlueH2 (Procured)", "elng_prod": "eLNG (Produced)", "elng_proc": "eLNG (Procured)", "ediesel_prod": "eDiesel (Produced)", "ediesel_proc": "eDiesel (Procured)", "emethanol_prod": "eMethanol (Produced)", "emethanol_proc": "eMethanol (Procured)"}
 }
 DEFAULT_FUEL_MIX = {
-    2030: {"diesel_prod": 92.91, "b30_prod": 1.54, "methanol_prod": 0.01, "methanol_proc": 0.00, "ammonia_prod": 0.02, "ammonia_proc": 0.01, "hvo_prod": 0.02, "hvo_proc": 5.49},
-    2040: {"diesel_prod": 7.49, "b50_prod": 2.10, "methanol_prod": 10.80, "methanol_proc": 0.02, "ammonia_prod": 7.80, "ammonia_proc": 8.07, "hvo_prod": 12.78, "hvo_proc": 12.60, "biolng_prod": 11.83, "biolng_proc": 11.27, "blueh2_prod": 7.69, "blueh2_proc": 7.56},
-    2050: {"diesel_prod": 11.66, "b100_prod": 11.60, "b100_proc": 7.90, "biomethanol_prod": 8.22, "biomethanol_proc": 5.14, "ammonia_prod": 4.84, "ammonia_proc": 0.03, "biolng_prod": 21.30, "biolng_proc": 16.26, "blueh2_prod": 1.46, "blueh2_proc": 0.61, "elng_prod": 3.06, "elng_proc": 2.91, "ediesel_prod": 0.87, "ediesel_proc": 0.02, "emethanol_prod": 1.99, "emethanol_proc": 2.13}
+    2030: {"diesel_prod": 95.19, "b30_prod": 2.14, "methanol_prod": 0.05, "methanol_proc": 0.00, "ammonia_prod": 0.09, "ammonia_proc": 0.10, "hvo_prod": 0.10, "hvo_proc": 2.62},
+    2040: {"diesel_prod": 15.92, "b50_prod": 3.04, "methanol_prod": 8.07, "methanol_proc": 0.08, "ammonia_prod": 4.20, "ammonia_proc": 10.70, "hvo_prod": 10.81, "hvo_proc": 6.60, "biolng_prod": 9.34, "biolng_proc": 9.11, "blueh2_prod": 10.91, "blueh2_proc": 3.29},
+    2050: {"diesel_prod": 7.13, "b100_prod": 9.60, "b100_proc": 11.30, "biomethanol_prod": 12.66, "biomethanol_proc": 10.12, "ammonia_prod": 7.84, "ammonia_proc": 2.35, "biolng_prod": 17.20, "biolng_proc": 23.10, "blueh2_prod": 0.26, "blueh2_proc": 1.82, "elng_prod": 2.06, "elng_proc": 4.12, "ediesel_prod": 0.37, "ediesel_proc": 0.22, "emethanol_prod": 2.33, "emethanol_proc": 0.35}
 }
 VESSEL_CONSUMPTION_FACTORS = {
-    2030: {"vlcc": 1306537.24, "suezmax": 618990.62, "aframax": 526902.73, "panamax": 468391.74, "mr_tanker": 355173.15},
-    2040: {"vlcc": 1304860.84, "suezmax": 617547.63, "aframax": 525203.36, "panamax": 467124.63, "mr_tanker": 354390.79},
-    2050: {"vlcc": 1303743.24, "suezmax": 616585.64, "aframax": 524070.44, "panamax": 466279.89, "mr_tanker": 353869.23}
+    2030: {"vlcc": 2306532.98, "suezmax": 988990.25, "aframax": 336902.26, "panamax": 691346.98, "mr_tanker": 155173.09},
+    2040: {"vlcc": 2504860.77, "suezmax": 847547.39, "aframax": 232203.87, "panamax": 346578.22, "mr_tanker": 125349.28},
+    2050: {"vlcc": 2103701.84, "suezmax": 716453.81, "aframax": 243025.66, "panamax": 279276.62, "mr_tanker": 102287.77}
 }
 DEFAULT_FUEL_COSTS_GJ = {
     2030: {"diesel_prod": 11.51, "b30_prod": 14.76, "methanol_prod": 30.68, "methanol_proc": 33.44, "ammonia_prod": 43.54, "ammonia_proc": 47.46, "hvo_prod": 25.43, "hvo_proc": 23.33},
