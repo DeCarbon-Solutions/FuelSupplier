@@ -9,7 +9,7 @@ from io import StringIO # To read string data as if it's a file
 import re # For more flexible parsing
 import numpy as np # For np.nan
 
-# *** Call set_page_config() immediately after imports ***
+# *** Call set_page_config() immediately after iports ***
 st.set_page_config(layout="wide")
 
 # --- Configuration ---
@@ -520,8 +520,7 @@ VLSFO	14.1	11.51	10.985	10.46	9.59	8.72
 st.pyplot(create_fuel_price_chart())
 st.divider()
 
-# --- Petrobras Major Export Products Projection Chart ---
-st.subheader("Petrobras Major Export Products Projection")
+st.subheader("Major Export Products Projection")
 @st.cache_data
 def parse_export_data(data_string):
     lines = data_string.strip().split('\n')
@@ -584,7 +583,7 @@ USA (Oil Products)	92.96593208	92.98058556	92.43405609	92.12700882	91.85158665	9
 
     if df_exports.empty:
         fig, ax = plt.subplots(figsize=(15,8)) 
-        ax.text(0.5, 0.5, "Data parsing for Petrobras Exports failed.\nPlease check data format.", ha='center', va='center', fontsize=12, color='red')
+        ax.text(0.5, 0.5, "Data parsing for Exports failed.\nPlease check data format.", ha='center', va='center', fontsize=12, color='red')
         return fig
 
     fig, ax = plt.subplots(figsize=(15, 8))
