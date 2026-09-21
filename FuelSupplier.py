@@ -36,7 +36,7 @@ FUEL_MIX_CATEGORIES = {
     2050: {"diesel_prod": "Diesel (Produced)", "b100_prod": "B100 (Produced)", "b100_proc": "B100 (Procured)", "biomethanol_prod": "bioMethanol (Produced)", "biomethanol_proc": "bioMethanol (Procured)", "ammonia_prod": "Ammonia (Produced)", "ammonia_proc": "Ammonia (Procured)", "biolng_prod": "BioLNG (Produced)", "biolng_proc": "BioLNG (Procured)", "blueh2_prod": "BlueH2 (Produced)", "blueh2_proc": "BlueH2 (Procured)", "elng_prod": "eLNG (Produced)", "elng_proc": "eLNG (Procured)", "ediesel_prod": "eDiesel (Produced)", "ediesel_proc": "eDiesel (Procured)", "emethanol_prod": "eMethanol (Produced)", "emethanol_proc": "eMethanol (Procured)"}
 }
 DEFAULT_FUEL_MIX = {
-    2030: {"diesel_prod": 95.19, "b30_prod": 2.14, "methanol_prod": 0.05, "methanol_proc": 0.00, "ammonia_prod": 0.09, "ammonia_proc": 0.10, "hvo_prod": 0.10, "hvo_proc": 2.62},
+    2030: {"diesel_prod": 95.19, "b30_prod": 2.14, "methanol_prod": 0.05, "methanol_proc": 0.00, "ammonia_prod": 0.09, "ammonia_proc": 0.10, "hvo_prod": 0.10, "hvo_proc": 2.33},
     2040: {"diesel_prod": 15.92, "b50_prod": 3.04, "methanol_prod": 8.07, "methanol_proc": 0.08, "ammonia_prod": 4.20, "ammonia_proc": 10.70, "hvo_prod": 10.81, "hvo_proc": 6.60, "biolng_prod": 9.34, "biolng_proc": 9.11, "blueh2_prod": 10.91, "blueh2_proc": 3.29},
     2050: {"diesel_prod": 7.13, "b100_prod": 9.60, "b100_proc": 11.30, "biomethanol_prod": 12.66, "biomethanol_proc": 10.12, "ammonia_prod": 7.84, "ammonia_proc": 2.35, "biolng_prod": 17.20, "biolng_proc": 23.10, "blueh2_prod": 0.26, "blueh2_proc": 1.82, "elng_prod": 2.06, "elng_proc": 4.12, "ediesel_prod": 0.37, "ediesel_proc": 0.22, "emethanol_prod": 2.33, "emethanol_proc": 0.35}
 }
